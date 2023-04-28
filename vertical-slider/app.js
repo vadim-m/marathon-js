@@ -36,5 +36,4 @@ function changeSlide(direction) {
 
   mainSlide.style.transform = `translateY(-${activeSlideIndex * 100}vh)`;
   sidebar.style.transform = `translateY(${activeSlideIndex * 100}vh)`;
-  console.log(activeSlideIndex);
 }
