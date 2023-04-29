@@ -6,6 +6,7 @@ const board = document.querySelector("#board");
 
 let time = 0;
 let score = 0;
+let intervalId;
 
 startBtn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -31,7 +32,7 @@ board.addEventListener("click", (e) => {
 
 function startGame() {
   screens[1].classList.add("up");
-  setInterval(decreaseTime, 1000);
+  intervalId = setInterval(decreaseTime, 1000);
 
   setTime(time);
   createRandomCircle();
@@ -51,8 +52,24 @@ function decreaseTime() {
 }
 
 function finishGame() {
+  clearInterval(intervalId);
   timerEl.parentNode.classList.add("hide");
-  board.innerHTML = `<h1>Счет: <span class="primary">${score}</span></h1>`;
+  board.innerHTML = `
+    <h1>Score: <span class="primary">${score}</span></h1>
+  `;
+
+  const playAgainBtn = document.createElement("a");
+  playAgainBtn.textContent = "Play again";
+  playAgainBtn.onclick = function () {
+    screens[1].classList.remove("up");
+    timerEl.parentNode.classList.remove("hide");
+    board.innerHTML = "";
+    score = 0;
+
+    playAgainBtn.remove();
+  };
+
+  timerEl.parentNode.insertAdjacentElement("afterbegin", playAgainBtn);
 }
 
 function createRandomCircle() {

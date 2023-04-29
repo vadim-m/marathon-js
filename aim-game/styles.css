@@ -16,6 +16,7 @@ body {
 a {
   color: #d79351;
   text-decoration: none;
+  cursor: pointer;
 }
 
 a:hover {
@@ -81,7 +82,7 @@ h1 {
 }
 
 .hide {
-  opacity: 0;
+  color: transparent;
 }
 
 .primary {
