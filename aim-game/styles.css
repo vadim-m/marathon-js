@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Khula&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  color: #fff;
-  font-family: "Khula", sans-serif;
+  color: #d79351;
+  font-family: "Rock Salt", cursive;
   height: 100vh;
   overflow: hidden;
   margin: 0;
@@ -14,12 +14,12 @@ body {
 }
 
 a {
-  color: #fff;
+  color: #d79351;
   text-decoration: none;
 }
 
 a:hover {
-  color: #16d9e3;
+  color: #f1ba84;
 }
 
 .start {
@@ -39,7 +39,15 @@ h1 {
   height: 100vh;
   width: 100vw;
   transition: margin 0.5s ease-out;
-  background: linear-gradient(90deg, #29323c 0%, #485563 100%);
+  background: url("./assets/bg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.screen h3 {
+  width: 100%;
+  text-align: center;
 }
 
 .screen.up {
@@ -60,17 +68,16 @@ h1 {
 
 .time-btn {
   background-color: transparent;
-  border: 2px solid #c0c0c0;
-  color: #fff;
+  color: #d79351;
   cursor: pointer;
   font-family: inherit;
   padding: 0.5rem 1rem 0.25rem;
   font-size: 1.5rem;
+  outline: none;
 }
 
 .time-btn:hover {
-  border: 2px solid #16d9e3;
-  color: #16d9e3;
+  color: #f1ba84;
 }
 
 .hide {
@@ -78,7 +85,7 @@ h1 {
 }
 
 .primary {
-  color: #16d9e3;
+  color: #d79351;
 }
 
 .board {
@@ -88,14 +95,14 @@ h1 {
   position: relative;
   width: 80vmin;
   height: 80vmin;
-  background: linear-gradient(118.38deg, #29323c -4.6%, #485563 200.44%);
-  box-shadow: -8px -8px 20px #2a333d, 10px 7px 20px #475462;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: -8px -8px 10px #2a333d, 6px 7px 10px #475462;
   border-radius: 30px;
   overflow: hidden;
 }
 
 .circle {
-  background: linear-gradient(90deg, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+  background: #d79351;
   position: absolute;
   border-radius: 50%;
   cursor: pointer;

@@ -15,7 +15,6 @@ startBtn.addEventListener("click", (e) => {
 timeList.addEventListener("click", (e) => {
   if (e.target.classList.contains("time-btn")) {
     time = parseInt(e.target.dataset.time);
-    console.log("nice", time);
   }
 
   startGame();
@@ -35,6 +34,7 @@ function startGame() {
   setInterval(decreaseTime, 1000);
 
   setTime(time);
+  createRandomCircle();
 }
 
 function decreaseTime() {
@@ -81,5 +81,3 @@ function getRandomNum(min, max) {
 function setTime(value) {
   timerEl.textContent = `00:${value}`;
 }
-
-createRandomCircle();
