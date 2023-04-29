@@ -13,8 +13,8 @@ body {
 }
 
 .container {
-  height: 64vmin;
-  width: 64vmin;
+  height: 80vmin;
+  width: 80vmin;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,8 +58,8 @@ body {
 }
 
 .square {
-  width: 4vmin;
-  height: 4vmin;
+  width: 5vmin;
+  height: 5vmin;
   background: white;
   background-color: #1d1d1d;
   box-shadow: 0 0 2px #000;
