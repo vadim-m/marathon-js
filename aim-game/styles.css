@@ -64,7 +64,7 @@ h1 {
   color: #fff;
   cursor: pointer;
   font-family: inherit;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem 0.25rem;
   font-size: 1.5rem;
 }
 
@@ -86,8 +86,8 @@ h1 {
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: 80vmin;
+  height: 80vmin;
   background: linear-gradient(118.38deg, #29323c -4.6%, #485563 200.44%);
   box-shadow: -8px -8px 20px #2a333d, 10px 7px 20px #475462;
   border-radius: 30px;
