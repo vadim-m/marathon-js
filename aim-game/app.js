@@ -17,6 +17,8 @@ document.addEventListener(
   "click",
   () => {
     menu.play();
+    menu.loop = true;
+    menu.autoplay = true;
   },
   { once: true }
 );
@@ -36,13 +38,11 @@ timeList.addEventListener("click", (e) => {
 
 board.addEventListener("click", (e) => {
   if (e.target.classList.contains("circle")) {
-    score++;
-    const ak = new Audio("./assets/ak.ogg");
-    ak.volume = 0.1;
-    ak.play();
     e.target.remove();
-    ak.remove();
+    score++;
 
+    playGunshotSound();
+    checkMultiKill();
     createRandomCircle();
   }
 });
@@ -114,4 +114,40 @@ function getRandomNum(min, max) {
 
 function setTime(value) {
   timerEl.textContent = `00:${value}`;
+}
+
+function playGunshotSound() {
+  let ak = new Audio("./assets/ak.ogg");
+  ak.volume = 0.1;
+  ak.play();
+  ak = null;
+}
+
+function checkMultiKill() {
+  let unrealSound = new Audio();
+  unrealSound.volume = 0.1;
+
+  switch (score) {
+    case 1:
+      unrealSound.src = "./assets/fb.ogg";
+      break;
+    case 2:
+      unrealSound.src = "./assets/dbkill.ogg";
+      break;
+    case 5:
+      unrealSound.src = "./assets/rampage.ogg";
+      break;
+    case 7:
+      unrealSound.src = "./assets/megakill.ogg";
+      break;
+    case 10:
+      unrealSound.src = "./assets/monster.ogg";
+      break;
+    case 15:
+      unrealSound.src = "./assets/godlike.ogg";
+      break;
+  }
+
+  unrealSound.play();
+  unrealSound = null;
 }
