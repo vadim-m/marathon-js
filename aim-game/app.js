@@ -11,7 +11,9 @@ let intervalId;
 const menu = new Audio("./assets/menu.ogg");
 menu.volume = 0.1;
 const mouse = new Audio("./assets/mouse.ogg");
-mouse.volume = 0.1;
+mouse.volume = 0.7;
+const winnerSound = new Audio("./assets/winner.ogg");
+winnerSound.volume = 0.1;
 
 document.addEventListener(
   "click",
@@ -23,6 +25,12 @@ document.addEventListener(
   { once: true }
 );
 
+document.addEventListener("click", (e) => {
+  if (e.target.tagName.toLowerCase() === "a") {
+    mouse.play();
+  }
+});
+
 startBtn.addEventListener("click", (e) => {
   e.preventDefault();
   screens[0].classList.add("up");
@@ -30,6 +38,7 @@ startBtn.addEventListener("click", (e) => {
 
 timeList.addEventListener("click", (e) => {
   if (e.target.classList.contains("time-btn")) {
+    mouse.play();
     time = parseInt(e.target.dataset.time);
   }
 
@@ -71,6 +80,7 @@ function decreaseTime() {
 function finishGame() {
   clearInterval(intervalId);
   timerEl.parentNode.classList.add("hide");
+  winnerSound.play();
   board.innerHTML = `
     <h1>Score: <span class="primary">${score}</span></h1>
   `;
