@@ -8,6 +8,19 @@ let time = 0;
 let score = 0;
 let intervalId;
 
+const menu = new Audio("./assets/menu.ogg");
+menu.volume = 0.1;
+const mouse = new Audio("./assets/mouse.ogg");
+mouse.volume = 0.1;
+
+document.addEventListener(
+  "click",
+  () => {
+    menu.play();
+  },
+  { once: true }
+);
+
 startBtn.addEventListener("click", (e) => {
   e.preventDefault();
   screens[0].classList.add("up");
@@ -24,7 +37,11 @@ timeList.addEventListener("click", (e) => {
 board.addEventListener("click", (e) => {
   if (e.target.classList.contains("circle")) {
     score++;
+    const ak = new Audio("./assets/ak.ogg");
+    ak.volume = 0.1;
+    ak.play();
     e.target.remove();
+    ak.remove();
 
     createRandomCircle();
   }
